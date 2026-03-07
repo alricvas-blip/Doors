@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <style>
+        body {
+            background-image: url('cool bg.avif');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .Para1,
+        .Para2 {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            color: rgb(9, 239, 236);
+            font-size: 50px;
+        }
+    </style>
+    <div>
+        <h1 class="header">ANALYSES</h1>
+
+    <div class="Para1">
+        <h1 style='text-align: left;
+            color:black;'> Analysing Typical Thickness Graph </h1>
+        <h2 style='text-align: left;
+			color:black; white-space: normal;'> The first graph illustrates the typical thickness of nine door types, showing a
+            range between 37.5 mm and 42.5 mm. Most categories, including Flush, Glass, Bi-fold, Sliding, and Pocket
+            doors, maintain a thickness of 37.5 mm, while Panel, French, and Double doors are slightly thicker at 40 mm.
+            The Personal Access door is the thickest variety shown at 42.5 mm.
+        </h2>:
+    </div>
+    <div class="Para2">
+        <h1 style='text-align: left;
+            color:black;'> Analysing Common Widths Graph </h1>
+        <h2 style='text-align: left;
+			color:black; white-space: normal;'> The second graph analyzes common widths for these categories, highlighting a
+            much broader range of measurements. The widths vary from a minimum of 660 mm to a maximum of 980 mm, with
+            several types clustered around the 832.5 mm mark. Other doors feature specific measurements such as 765 mm,
+            770 mm, 786.67 mm, 803.33 mm, and 820 mm.
+        </h2>
+    </div>
+
+    <div class="nav">
+        <select onchange="openPage(this.value)">
+            <option value="">Select a page</option>
+            <option value="DOORS.html">Home</option>
+            <option value="Page 2.html">Analyses</option>
+        </select>
+
+        <script>
+            function openPage(page) {
+                if (page !== "") {
+                    window.location.href = page;
+                }
+            }
+        </script>
+    </div>

@@ -3,46 +3,95 @@
 
 <head>
 </head>
-<style>
-body{
-	background-image: url('door.jpg');
-}
-</style>
-<h1 style='text-align: center;
-			color:black;'> DOORS </h1>
+<header>
+	<style>
+		body {
+			background-image: url('door.jpg');
+			background-size: cover;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			margin: 0;
+			height: 100vh;
+		}
 
-<h2 style='text-align: center;
+		.graphContainer {
+			/* background-color: red; */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.header {
+			text-align: center;
+			color: black;
+			transition: all 0.3s ease;
+		}
+
+		.header:hover {
+			color: rgb(173, 99, 59);
+			font-size: 50px;
+		}
+
+		.nav {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+
+	</style>
+	<div>
+		<h1 class="header">DOORS</h1>
+
+		<h2 style='text-align: center;
 			color:black;
-			background-color: white'> This website looks at the enthralling world of DOORS! </h2>
+			background-color: rgba(255, 255, 255, 0.5);'> This website looks at the enthralling world of DOORS! </h2>
+		<p style='text-align: center;
+		color:black;
+		background-color: rgba(255, 255, 255, 0.5);'> Welcome to DOORS, the coolest, most exciting and amazing little burrow on the world wide
+			web.
+			<br>
+			Within the bounds of this URL you will find the answers to everything your curious brain could question...
+		</p>
+	</div>
+	<div class="nav">
+		<select onchange="openPage(this.value)">
+			<option value="">Home</option>
+			<option value="Page 2.html">Analyses</option>
+		</select>
+
+		<script>
+			function openPage(page) {
+				if (page !== "") {
+					window.location.href = page;
+				}
+			}
+		</script>
+	</div>
+</header>
+
+<div class="graphContainer">
+	<img src="Graph One.jpeg" width="500" height="500">
+	<img src="Graph Two.jpeg" width="500" height="500" class="centre"
+		alt="Bar chart titled Common Widths (mm) showing 9 blue bars representing different door width measurements ranging from 660mm to 980mm, with values labeled on each bar including 786.67, 832.5, 770, 832.5, 660, 980, 820, 803.33, and 765, displayed against a light gray background with gridlines.">
+</div>
+
+
 <p style='text-align: center;
 		color:black;
-		background-color: white;'> Welcome to DOORS, the coolest, most exciting and amazing little burrow on the world wide web. 
-		<br>
- 		Within the bounds of this URL you will find the answers to everything your curious brain could question...
-</p>
+		background-color: rgba(255, 255, 255, 0.5);'> Graphical data sourced from: Door Supply. (2026, January 29). Standard Door Size Australia
+	Guide: Essential Info 2026. Door Supply.
 
-<img src=door.jpg alt="a door. a big brown door" width="500" height="500"></img>
-<img src="door.gif" alt="flipping through doors"></img>
-
-
-<img src="Graph One.jpeg" width="500" height="500"></img>
-<div style="text-align: center; margin: 20px 0;">
-	<img src="Graph Two.jpeg" width="500" height="500" alt="Bar chart titled Common Widths (mm) showing 9 blue bars representing different door width measurements ranging from 660mm to 980mm, with values labeled on each bar including 786.67, 832.5, 770, 832.5, 660, 980, 820, 803.33, and 765, displayed against a light gray background with gridlines.">
-
-
-<p style='text-align: center;
-		color:black;
-		background-color: white;'> Graphical data sourced from: Door Supply. (2026, January 29). Standard Door Size Australia Guide: Essential Info 2026. Door Supply.
-			
-	 <br> Open the dore...
+	<br> Open the door... </p>
 
 </p>
-<a href="https://www.doorsupply.com.au/blogs/news/standard-door-size-australia?">	
-	<img src="door.jpg" alt="go into door"></img>
+<div
+	style='text-align: center'>
+	<a href="https://www.doorsupply.com.au/blogs/news/standard-door-size-australia?">
+		<img src="door.jpg" alt="A wooden door with four rectangular panels in a deep reddish-brown finish, featuring a silver handle and lock mechanism on the right side. The door is framed by matching wooden trim against a neutral interior wall, creating a classic entryway appearance.">
 	</a>
-‌ </p>
+</div>
 </div>
 </body>
 
 </html>
-
