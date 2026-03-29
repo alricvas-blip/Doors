@@ -1,34 +1,40 @@
+from dataclasses import dataclass
 import random
 
+@dataclass
 class Card:
-    def __init__(self, rank, suit):
-        self.rank = rank
-        self.suit = suit
+    suit: str
+    rank : str
 
-    def __str__(self):
-        return f"{self.rank} of {self.suit}"
-
-    def __repr__(self):
-        return self.__str__()
+    def print (self):
+        print(f"{self.rank} of {self.suit}")
 
 class Deck:
     def __init__(self):
         self.cards = []
-        # Reordered ranks to standard order: 2-10, Jack, Queen, King, Ace
+        suits = ["Spades", "Hearts", "Diamonds", "Clubs"]
         ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-        suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
-        for s in suits:
-            for r in ranks:
-                self.cards.append(Card(r, s))
+        
+        # Creating all 52 cards
+        for suit in suits:
+            for rank in ranks:
+                new_card = Card(suit, rank)
+                self.cards.append(new_card)
 
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def show(self):
+    def displayAll(self):
         for card in self.cards:
-            print(card)
+            card.print()
 
 if __name__ == "__main__":
+    # Create the deck
     my_deck = Deck()
+    
+    # Shuffle the deck
     my_deck.shuffle()
-    my_deck.show()
+    
+    # Display cards in the shuffled deck
+    print("Shuffled Deck:")
+    my_deck.displayAll()
