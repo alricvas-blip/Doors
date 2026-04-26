@@ -79,8 +79,7 @@ class Player:
 
     def display_hand(self):
         """Displays the player's hand, sorted for readability."""
-        print(f"
-{self.name}'s hand:")
+        print(f"\n{self.name}'s hand:")
         self.hand.sort(key=get_card_sort_key)
         
         # A standard for-loop to print cards with an index, replacing enumerate().
@@ -156,8 +155,7 @@ class Player:
     def choose_cards_to_pass(self) -> List[Card]:
         """Asks the player to choose 3 cards to pass."""
         self.display_hand()
-        print(f"
-{self.name}: Choose 3 cards to pass.")
+        print(f"\n{self.name}: Choose 3 cards to pass.")
         indices = []
         while len(indices) < 3:
             try:
@@ -222,8 +220,7 @@ class HeartsGame:
             self.play_round()
         
         # Find and announce the winner (player with the lowest score)
-        print("
-=== GAME OVER ===")
+        print("\n=== GAME OVER ===")
         winner = self.players[0]
         for p in self.players:
             if p.total_score < winner.total_score:
@@ -231,16 +228,12 @@ class HeartsGame:
         
         for p in self.players:
             print(f"Final Score for {p.name}: {p.total_score}")
-        print(f"
-WINNER: {winner.name}!")
+        print(f"\nWINNER: {winner.name}!")
 
     def play_round(self):
         """Manages the logic for a single round of Hearts (13 tricks)."""
         self.round_num += 1
-        print(f"
-***************************
-*      HEARTS ROUND {self.round_num}     *
-***************************")
+        print(f"\n***************************\n*      HEARTS ROUND {self.round_num}     *\n***************************")
         
         # --- Setup Phase ---
         self.hearts_broken = False
@@ -273,8 +266,7 @@ WINNER: {winner.name}!")
 
         # Play 13 tricks
         for i in range(13):
-            print(f"
---- Trick {i + 1} of 13 ---")
+            print(f"\n--- Trick {i + 1} of 13 ---")
             leader_idx = self.play_trick(leader_idx, i == 0)
         
         # --- Scoring Phase ---
@@ -360,8 +352,7 @@ WINNER: {winner.name}!")
                 moon_shooter = p
                 break
         
-        print("
---- End of Round Scores ---")
+        print("\n--- End of Round Scores ---")
         if moon_shooter:
             print(f"!!! {moon_shooter.name} has SHOT THE MOON! !!!")
             for p in self.players:
